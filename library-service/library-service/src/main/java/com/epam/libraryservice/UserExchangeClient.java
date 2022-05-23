@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.epam.libraryservice.dto.UserDto;
 
 
-@FeignClient(name="users-service",fallback=UserExchangeClient.class)
+@FeignClient(name="users-service",fallback=UserExchangeClientImpl.class)
 @LoadBalancerClient(name="users-service",configuration=UserExchangeClientImpl.class)
 public interface UserExchangeClient {
 	
